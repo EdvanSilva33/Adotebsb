@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Adoção - Adote um Amigo</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo Patinha Adote um Amigo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#sobre">Sobre Nós</a></li>
+                    <li><a href="index.html#como-ajudar">Como Ajudar</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <form class="search-bar">
+                <input type="text" name="query" placeholder="Buscar animal...">
+                <button type="submit">Q</button>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <section class="form-section adoption-form-section">
+            <div class="container">
+                <h2>Formulário de Interesse em Adoção</h2>
+                <p>Preencha o formulário abaixo para demonstrar seu interesse em adotar um dos nossos peludos. Entraremos em contato o mais breve possível!</p>
+                
+                <div class="flash-messages-form" style="display: none;"></div>
+
+                <form class="adoption-form" id="adoption-form">
+                    <fieldset>
+                        <legend>Seus Dados Pessoais</legend>
+                        <div class="form-group">
+                            <label for="nome_completo">Nome Completo:</label>
+                            <input type="text" id="nome_completo" name="nome_completo" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone (com DDD):</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Seu Endereço</legend>
+                        <div class="form-group">
+                            <label for="endereco_rua">Rua/Avenida:</label>
+                            <input type="text" id="endereco_rua" name="endereco_rua" required>
+                        </div>
+                        <div class="form-group form-group-inline">
+                            <div>
+                                <label for="endereco_numero">Número:</label>
+                                <input type="text" id="endereco_numero" name="endereco_numero" required>
+                            </div>
+                            <div>
+                                <label for="endereco_complemento">Complemento:</label>
+                                <input type="text" id="endereco_complemento" name="endereco_complemento">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="endereco_bairro">Bairro:</label>
+                            <input type="text" id="endereco_bairro" name="endereco_bairro" required>
+                        </div>
+                        <div class="form-group form-group-inline">
+                            <div>
+                                <label for="endereco_cidade">Cidade:</label>
+                                <input type="text" id="endereco_cidade" name="endereco_cidade" required>
+                            </div>
+                            <div>
+                                <label for="endereco_estado">Estado:</label>
+                                <input type="text" id="endereco_estado" name="endereco_estado" required maxlength="2" placeholder="UF">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="endereco_cep">CEP:</label>
+                            <input type="text" id="endereco_cep" name="endereco_cep" placeholder="XXXXX-XXX" required>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Sobre a Adoção</legend>
+                        <div class="form-group">
+                            <label for="tipo_moradia">Tipo de Moradia:</label>
+                            <select id="tipo_moradia" name="tipo_moradia" required>
+                                <option value="" disabled selected>Selecione...</option>
+                                <option value="casa_com_quintal">Casa com quintal</option>
+                                <option value="casa_sem_quintal">Casa sem quintal</option>
+                                <option value="apartamento">Apartamento</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="outros_animais">Já possui outros animais? Se sim, quais e quantos?</label>
+                            <textarea id="outros_animais" name="outros_animais" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="porque_adotar">Por que você deseja adotar?</label>
+                            <textarea id="porque_adotar" name="porque_adotar" rows="4" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="animal_interesse">Nome do animal de interesse (se houver):</label>
+                            <input type="text" id="animal_interesse" name="animal_interesse">
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem_adicional">Alguma informação adicional que gostaria de compartilhar?</label>
+                            <textarea id="mensagem_adicional" name="mensagem_adicional" rows="4"></textarea>
+                        </div>
+                    </fieldset>
+                    
+                    <div class="form-group form-submit-group">
+                        <button type="submit" class="btn-primary">Enviar Solicitação de Adoção</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contato-form">
+        <div class="container">
+            <p>&copy; <span id="current-year">2025</span> Adote um Amigo. Todos os direitos reservados.</p>
+            <p>Desenvolvido com carinho para ajudar nossos peludos!</p>
+        </div>
+    </footer>
+
+    <script src="js/animais.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Atualizar o ano atual no rodapé
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
